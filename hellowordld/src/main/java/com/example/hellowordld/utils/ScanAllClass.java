@@ -1,4 +1,4 @@
-package ScanUtils.src.main.java;
+package com.example.hellowordld.utils;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.regex.Pattern;

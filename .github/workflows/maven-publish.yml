@@ -26,5 +26,5 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
       - name: Run Java Class
-        run: java -cp target/classes ScanUtils.src.main.java.ScanAllClass .
+        run: java -cp target/classes hellowordld.src.main.java.com.example.hellowordld.utils.ScanAllClass .
 
