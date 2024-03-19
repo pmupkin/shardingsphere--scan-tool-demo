@@ -3,7 +3,7 @@
 
 name: Maven Package
 
-on: [push , pull_request]
+on: [pull_request]
 
 jobs:
   build:
@@ -27,5 +27,5 @@ jobs:
 #        run: mvn clean install
 #        working-directory: /home/runner/work/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo
       - name: Run Java Class
-        run: java -cp ./hellowordld hellowordld.src.main.java.com.example.hellowordld.utils.ScanAllClass .
+        run: java -cp target/classes hellowordld.src.main.java.com.example.hellowordld.utils.ScanAllClass .
 #
