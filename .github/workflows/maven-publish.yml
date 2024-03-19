@@ -23,9 +23,9 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Build with Maven
-        run: mvn clean install
-        working-directory: /home/runner/work/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo
+#      - name: Build with Maven
+#        run: mvn clean install
+#        working-directory: /home/runner/work/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo/shardingsphere--scan-tool-demo
       - name: Run Java Class
-        run: java -cp target/classes hellowordld.src.main.java.com.example.hellowordld.utils.ScanAllClass .
+        run: java -cp ./hellowordld hellowordld.src.main.java.com.example.hellowordld.utils.ScanAllClass .
 #
