@@ -28,4 +28,7 @@ jobs:
       - name: Run Java Class
         run: java -cp target/classes com.example.hellowordld.utils.ScanAllClass
         working-directory: hellowordld
+      - name: List target/classes directory
+        run: ls -la target/classes
+        working-directory: hellowordld  # 替换为你的实际项目路径
 #
