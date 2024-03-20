@@ -13,7 +13,7 @@ public class ScanAllClass {
     //"target/test-classes/";
     public static void main(String[] args) {
        //String projectPath = args.length > 0 ? args[0] : "."; // 可以从命令行参数获取项目路径
-        File classesDir = new File(".");
+        File classesDir = new File(CLASSES_PATH);
         File testClassesDir = new File(TEST_CLASSES_PATH);
         if (classesDir.exists() && classesDir.isDirectory()) { // && testClassesDir.exists() && testClassesDir.isDirectory()) {
             scanClasses(classesDir, testClassesDir);
