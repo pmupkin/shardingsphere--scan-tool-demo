@@ -8,8 +8,8 @@ public class ScanAllClass {
 
     private static final String CLASS_FILE_EXTENSION = ".class";
     private static final String TEST_CLASS_SUFFIX = "Tests";
-    private static final String CLASSES_PATH = ".\\target\\classes";
-    private static final String TEST_CLASSES_PATH = ".\\target\\test-classes\\";
+    private static final String CLASSES_PATH = "./target/classes";
+    private static final String TEST_CLASSES_PATH = "./target/test-classes/";
     //"target/test-classes/";
     public static void main(String[] args) {
        //String projectPath = args.length > 0 ? args[0] : "."; // 可以从命令行参数获取项目路径
@@ -34,7 +34,7 @@ public class ScanAllClass {
                         String className = classNameFromFile(file, CLASSES_PATH);
                         System.out.println("className->"+className);
                         //String testClassName = testClassNameFromClassName(className) + TEST_CLASS_SUFFIX;
-                        String testClassPath = TEST_CLASSES_PATH + className.replace('.', '/') + TEST_CLASS_SUFFIX +  CLASS_FILE_EXTENSION;
+                        String testClassPath = TEST_CLASSES_PATH + className.replace('.', '\\') + TEST_CLASS_SUFFIX +  CLASS_FILE_EXTENSION;
                         System.out.println("测试类路径:"+testClassPath);
                         File testClassFile = new File(testClassPath);
                         if (!testClassFile.exists()) {
