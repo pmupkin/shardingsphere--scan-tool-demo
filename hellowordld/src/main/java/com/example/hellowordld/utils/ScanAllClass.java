@@ -46,7 +46,7 @@ public class ScanAllClass {
                         //System.out.println("测试类路径:"+testClassPath);
                         File testClassFile = new File(testClassPath);
                         if (!testClassFile.exists()) {
-                            resMd += ("- " + className);
+                            resMd += ("- " + className +"\n");
                         }
                     }
                 }

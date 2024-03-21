@@ -40,7 +40,7 @@ jobs:
           script: |
             console.log(process.cwd()); 
             const output = require('fs').readFileSync('./hellowordld/output.md', 'utf8');
-            const title = 'Automated Issue: ' + output.split('\n')[0].trim();
+            const title = '' + output.split('\n')[0].trim();
             const body = output.substring(title.length).trim();
             await github.issues.create({
               owner: context.repo.owner,
