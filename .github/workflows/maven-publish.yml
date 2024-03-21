@@ -32,6 +32,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          working-directory: hellowordld
           script: |
             const output = require('fs').readFileSync('output.md', 'utf8');
             const title = 'Automated Issue: ' + output.split('\n')[0].trim();
@@ -42,4 +43,4 @@ jobs:
               title: title,
               body: body
             });
-          working-directory: hellowordld
+    
