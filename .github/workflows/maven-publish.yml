@@ -38,7 +38,7 @@ jobs:
 #          working-directory: hellowordld
           script: |
             console.log(process.cwd()); 
-            const output = require('fs').readFileSync('./output.md', 'utf8');
+            const output = require('fs').readFileSync('./hellowordld/output.md', 'utf8');
             const title = 'Automated Issue: ' + output.split('\n')[0].trim();
             const body = output.substring(title.length).trim();
             await github.issues.create({
