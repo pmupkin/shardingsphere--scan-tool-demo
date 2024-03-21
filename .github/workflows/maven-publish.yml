@@ -26,9 +26,19 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -f hellowordld/pom.xml
       - name: Run Java Class
-        run: java -cp target/classes com.example.hellowordld.utils.ScanAllClass
+        run: java -cp target/classes com.example.hellowordld.utils.ScanAllClass > output.md
         working-directory: hellowordld
-      - name: List target/classes directory
-        run: ls -la target/classes
-        working-directory: hellowordld  # 替换为你的实际项目路径
-#
+      - name: Create Issue
+        uses: actions/github-script@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const output = require('fs').readFileSync('output.md', 'utf8');
+            const title = 'Automated Issue: ' + output.split('\n')[0].trim();
+            const body = output.substring(title.length).trim();
+            await github.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: title,
+              body: body
+            });
